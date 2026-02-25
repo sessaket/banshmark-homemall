@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Competitive Benchmark Deck</title>
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/deck.css" />
+  <link rel="stylesheet" href="css/print.css" media="print" />
+</head>
+<body>
+  <div id="app-shell">
+    <header id="chrome-topbar">
+      <div id="deck-title" class="topbar-title">Competitive Benchmark</div>
+      <div class="topbar-actions">
+        <button id="btn-prev" class="topbar-btn" type="button">Prev</button>
+        <button id="btn-next" class="topbar-btn" type="button">Next</button>
+        <button id="btn-overview" class="topbar-btn" type="button">Overview (Esc)</button>
+        <button id="btn-print" class="topbar-btn" type="button">Print / Export PDF</button>
+        <button id="btn-fullscreen" class="topbar-btn" type="button">Fullscreen (F)</button>
+        <button id="btn-help" class="topbar-btn" type="button">Help (?)</button>
+      </div>
+    </header>
+
+    <div id="deck-viewport">
+      <div id="deck-frame">
+        <main id="slides-root" aria-live="polite"></main>
+      </div>
+      <div id="loading-state">Loading benchmark data...</div>
+    </div>
+
+    <footer id="chrome-footer">
+      <div>
+        <div id="progress-track">
+          <div id="progress-bar"></div>
+        </div>
+        <div id="global-sources">Sources: -</div>
+      </div>
+      <div id="progress-label">0 / 0</div>
+    </footer>
+  </div>
+
+  <section id="overview-panel" aria-label="Slide overview">
+    <div class="overview-top">
+      <div class="overview-headline">
+        <strong>Overview mode</strong>: click any slide thumbnail to jump
+        <span id="overview-status" class="overview-status">Showing 0 of 0</span>
+      </div>
+      <input id="overview-search" type="search" placeholder="Search app name, region, or slide..." />
+    </div>
+    <div id="overview-grid"></div>
+  </section>
+
+  <section id="help-overlay" aria-label="Keyboard help">
+    <div class="help-card">
+      <h3>Keyboard Shortcuts</h3>
+      <ul class="help-list">
+        <li><code>Left</code> / <code>Right</code> Navigate previous or next slide</li>
+        <li><code>Home</code> First slide</li>
+        <li><code>End</code> Last slide</li>
+        <li><code>Esc</code> Toggle overview grid</li>
+        <li><code>F</code> Toggle fullscreen</li>
+        <li><code>?</code> Toggle this help overlay</li>
+        <li>URL routing: <code>#/slide/12</code></li>
+      </ul>
+      <p style="margin-top:12px; color:#6b7280; font-size:0.9rem;">Click outside this panel to close.</p>
+    </div>
+  </section>
+
+  <script src="js/charts.js"></script>
+  <script src="js/embedded-data.js"></script>
+  <script src="js/data.js"></script>
+  <script src="slides/templates.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/deck.js"></script>
+</body>
+</html>

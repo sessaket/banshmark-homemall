@@ -1,0 +1,59 @@
+﻿@page {
+  size: 16in 9in;
+  margin: 0.3in;
+}
+
+@media print {
+  body {
+    background: #fff !important;
+    overflow: visible !important;
+  }
+
+  #chrome-topbar,
+  #chrome-footer,
+  #overview-panel,
+  #help-overlay {
+    display: none !important;
+  }
+
+  #app-shell {
+    display: block !important;
+    height: auto !important;
+  }
+
+  #deck-viewport {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  #deck-frame,
+  #slides-root {
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    position: static !important;
+  }
+
+  .slide,
+  .slide.is-active {
+    display: grid !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 8.5in;
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    margin: 0 0 0.28in !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    page-break-after: always;
+  }
+
+  .slide-footer {
+    color: #374151 !important;
+  }
+
+  .overview-clone {
+    display: none !important;
+  }
+}
