@@ -109,17 +109,22 @@
       logoHtml = "<div class=\"fallback-badge\">" + escapeHtml(initials(app.name)) + "</div>";
     }
 
-    var noteText = app.notes ? "<div class=\"logo-note\">" + escapeHtml(app.notes) + "</div>" : "<div class=\"logo-note\">" + escapeHtml((app.logo && app.logo.note) || "Logo fallback badge is used in this deck.") + "</div>";
     var websiteAction = website ?
       "<a class=\"website-btn\" href=\"" + escapeHtml(website) + "\" target=\"_blank\" rel=\"noopener noreferrer\">Visit Website</a><div class=\"website-domain\">" + escapeHtml(websiteLabel) + "</div>" :
       "<div class=\"website-domain\">Website: Unknown</div>";
+    var diagramHtml = (window.BenchmarkCharts && typeof window.BenchmarkCharts.createAppCapabilityDiagram === "function")
+      ? window.BenchmarkCharts.createAppCapabilityDiagram(app)
+      : "";
+    var capabilityDiagram = diagramHtml
+      ? "<div class=\"app-diagram\"><div class=\"app-diagram-title\">Capability Diagram</div><div class=\"app-diagram-canvas\">" + diagramHtml + "</div></div>"
+      : "";
 
     var content = "" +
       "<div class=\"app-layout\">" +
       "  <aside class=\"logo-panel\">" +
       "    <div class=\"logo-holder\">" + logoHtml + "</div>" +
+           capabilityDiagram +
            websiteAction +
-           noteText +
       "  </aside>" +
       "  <section class=\"cards-grid\">" +
            card("Business Model", iconPaths.business, app.businessModel, 4) +
