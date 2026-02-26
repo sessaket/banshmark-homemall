@@ -69,7 +69,7 @@
     var searchText = config.searchText || title;
 
     return "" +
-      "<section class=\"slide\" data-kind=\"" + escapeHtml(kind) + "\" data-search=\"" + escapeHtml(searchText.toLowerCase()) + "\">" +
+      "<section class=\"slide\" data-kind=\"" + escapeHtml(kind) + "\" data-search=\"" + escapeHtml(searchText.toLowerCase()) + "\" data-sources=\"" + escapeHtml(sources) + "\">" +
       "  <header class=\"slide-header\">" +
       "    <div class=\"slide-heading\">" +
       "      <h2 class=\"slide-title\">" + escapeHtml(title) + "</h2>" +
@@ -79,7 +79,6 @@
       "  </header>" +
       "  <div class=\"slide-content\">" + content + "</div>" +
       "  <footer class=\"slide-footer\">" +
-      "    <span class=\"footer-sources\">Sources: " + escapeHtml(sources) + "</span>" +
       "    <span class=\"footer-number\" data-slide-number></span>" +
       "  </footer>" +
       "</section>";

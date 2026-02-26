@@ -3,6 +3,7 @@
 
   var DESIGN_WIDTH = 1600;
   var DESIGN_HEIGHT = 900;
+  var DECK_TITLE = "Tomorrow Systems";
 
   var state = {
     data: null,
@@ -88,7 +89,7 @@
 
     var active = state.slides[state.index];
     refs.globalSources.textContent = "Sources: " + (active ? active.sources : "-");
-    refs.deckTitle.textContent = active ? active.title : "Benchmark Deck";
+    refs.deckTitle.textContent = DECK_TITLE;
   }
 
   function setActiveSlide(nextIndex, options) {

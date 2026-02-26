@@ -242,13 +242,12 @@
   function collectSlideMeta(container) {
     return Array.prototype.slice.call(container.querySelectorAll(".slide")).map(function (node, index) {
       var titleNode = node.querySelector(".slide-title");
-      var sourceNode = node.querySelector(".footer-sources");
       return {
         index: index,
         kind: node.getAttribute("data-kind") || "generic",
         title: titleNode ? titleNode.textContent.trim() : "Slide " + (index + 1),
         search: node.getAttribute("data-search") || "",
-        sources: sourceNode ? sourceNode.textContent.replace(/^Sources:\s*/, "") : "",
+        sources: node.getAttribute("data-sources") || "",
         element: node
       };
     });
