@@ -409,6 +409,57 @@
   height: 100%;
 }
 
+.matrix-combined {
+  display: grid;
+  grid-template-rows: 0.9fr 1.1fr;
+  gap: 12px;
+  height: 100%;
+}
+
+.matrix-combined-top {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 12px;
+  min-height: 0;
+}
+
+.matrix-combined-bottom {
+  min-height: 0;
+}
+
+.matrix-heat-wrap {
+  height: calc(100% - 30px);
+  overflow: hidden;
+}
+
+.matrix-table-only .matrix-heat-wrap {
+  height: calc(100% - 34px);
+  overflow: auto;
+}
+
+.matrix-combined .rank-table {
+  font-size: 0.76rem;
+}
+
+.matrix-combined .rank-table th,
+.matrix-combined .rank-table td {
+  padding: 4px 3px;
+}
+
+.matrix-combined .panel .bullet-list {
+  font-size: 0.84rem;
+  gap: 5px;
+}
+
+.matrix-combined .heat-table {
+  font-size: 0.72rem;
+}
+
+.matrix-combined .heat-table th,
+.matrix-combined .heat-table td {
+  padding: 3px 4px;
+}
+
 .chart-panel {
   border: 1px solid var(--border);
   border-radius: 12px;

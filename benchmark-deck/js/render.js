@@ -145,79 +145,21 @@
     var features = data.matrixFeatures;
     var apps = data.apps;
 
-    var slide1 = genericSlide({
-      title: "Comparison Matrix I",
-      subtitle: "Global feature coverage across all benchmarked platforms",
-      tags: ["Matrix", "Coverage"],
+    var slide = genericSlide({
+      title: "Comparison Matrix",
+      subtitle: "Regional capability table",
+      tags: ["Matrix", "Table"],
       content: "" +
-        "<div class=\"summary-grid\">" +
-        "  <section class=\"chart-panel\">" +
-        "    <h3 class=\"chart-title\">Feature Coverage Rate</h3>" +
-        "    <div class=\"chart-area\">" + Charts.createFeatureCoverageChart(features, apps) + "</div>" +
-        "  </section>" +
-        "  <section class=\"panel\">" +
-        "    <h3>Matrix Columns</h3>" +
-             Templates.bulletList(features.map(function (feature) { return feature.label; }), 12) +
-        "    <h3 style=\"margin-top:14px;\">Interpretation</h3>" +
-             Templates.bulletList([
-               "Listings and search fundamentals are commoditized",
-               "Decision support features are less uniformly adopted",
-               "Gov and AI capabilities remain uneven by region"
-             ], 8) +
-        "  </section>" +
-        "</div>",
-      sources: sourceSample(data, 8),
-      kind: "matrix",
-      searchText: "matrix feature coverage"
-    });
-
-    var slide2 = genericSlide({
-      title: "Comparison Matrix II",
-      subtitle: "Top platforms by confirmed feature score",
-      tags: ["Matrix", "Ranking"],
-      content: "" +
-        "<div class=\"columns-2\">" +
-        "  <section class=\"panel\">" +
-        "    <h3>Top 15 Platforms (Feature Score)</h3>" +
-             Charts.createTopPlatformsTable(apps, features, 15) +
-        "  </section>" +
-        "  <section class=\"panel\">" +
-        "    <h3>Score Caveats</h3>" +
-             Templates.bulletList([
-               "Binary scoring favors breadth over depth",
-               "Unknown/Likely facts are conservative (0 points)",
-               "Regional regulation affects feature parity",
-               "Sub-brands may inherit parent capabilities",
-               "Use this ranking as screening, not final diligence"
-             ], 8) +
-        "    <h3 style=\"margin-top:14px;\">Where Leaders Differentiate</h3>" +
-             Templates.bulletList([
-               "Integrated estimates + neighborhood context",
-               "Financing and affordability workflow support",
-               "Investment and scenario signals for serious buyers"
-             ], 8) +
-        "  </section>" +
-        "</div>",
-      sources: sourceSample(data, 8),
-      kind: "matrix",
-      searchText: "matrix ranking top platforms"
-    });
-
-    var slide3 = genericSlide({
-      title: "Comparison Matrix III",
-      subtitle: "Regional capability averages by feature",
-      tags: ["Matrix", "Regional"],
-      content: "" +
-        "<section class=\"panel\" style=\"height:100%;\">" +
-        "  <h3>Regional Heatmap</h3>" +
-        "  <div style=\"height:calc(100% - 30px); overflow:auto;\">" + Charts.regionMatrix(features, apps) + "</div>" +
+        "<section class=\"panel matrix-table-only\" style=\"height:100%;\">" +
+        "  <h3>Regional Capability Table</h3>" +
+        "  <div class=\"matrix-heat-wrap\">" + Charts.regionMatrix(features, apps) + "</div>" +
         "</section>",
       sources: sourceSample(data, 8),
       kind: "matrix",
-      searchText: "matrix regional heatmap"
+      searchText: "matrix regional capability table"
     });
 
-    return [slide1, slide2, slide3];
+    return [slide];
   }
 
   function sourceAppendixSlide(data) {
