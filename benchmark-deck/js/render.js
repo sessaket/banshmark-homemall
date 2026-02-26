@@ -45,14 +45,14 @@
       "<div class=\"title-center\">" +
       "  <div>" +
       "    <img class=\"title-brand-logo\" src=\"" + companyLogoPath + "\" alt=\"Tomorrow Systems Logo\" />" +
-      "    <h1>banshmark homemall</h1>" +
+      "    <h1>benchmark homemall</h1>" +
       "    <p>Competitive benchmark deck</p>" +
       "    <div class=\"title-pill\">" + data.summary.totalApps + " platforms \u2022 " + data.summary.uniqueDomains.length + " source domains</div>" +
       "  </div>" +
       "</div>";
 
     return genericSlide({
-      title: "banshmark homemall",
+      title: "benchmark homemall",
       subtitle: "Competitive benchmark deck",
       tags: ["Benchmark", "Web Deck"],
       content: content,
